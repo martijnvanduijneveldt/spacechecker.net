@@ -17,5 +17,10 @@ namespace ScapeChecker.Net
             var enough = enoughSpace ? "yes" : "no";
             Console.Out.WriteLine("Enough space    : " + enough);
         }
+
+        public static void PrintStackTrace(Options opts, Exception ex)
+        {
+            Console.Error.WriteLine(ex.ToString());
+        }
     }
 }

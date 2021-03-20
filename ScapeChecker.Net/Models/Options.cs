@@ -16,5 +16,8 @@ namespace ScapeChecker.Net.Models
 
         [Option('s', "size", Required = true, HelpText = "Minimal size you want to have on share")]
         public uint Size { get; set; }
+
+        [Option( "nunitoutput", Required = false, HelpText = "Output file for nunit reporter")]
+        public string NUnitOuputFile { get; set; }
     }
 }

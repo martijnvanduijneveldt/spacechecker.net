@@ -11,40 +11,51 @@ namespace ScapeChecker.Net
     {
         public static void RunOptions(Options opts)
         {
-            var options = new ConnectionOptions();
-            options.Impersonation = ImpersonationLevel.Impersonate;
-
-            var scope = new ManagementScope($"\\\\{opts.MachineName}\\root\\cimv2", options);
             try
             {
-                scope.Connect();
+                var options = new ConnectionOptions();
+                options.Impersonation = ImpersonationLevel.Impersonate;
+
+                var scope = new ManagementScope($"\\\\{opts.MachineName}\\root\\cimv2", options);
+                try
+                {
+                    scope.Connect();
+                }
+                catch (Exception ex)
+                {
+                    throw new ConnectionError(ex);
+                }
+
+                var query = new ObjectQuery($"SELECT * from Win32_Volume WHERE DriveLetter = '{opts.DriveName}:'");
+                Win32Volume volumeInfo;
+                using (var searcher = new ManagementObjectSearcher(scope, query))
+                {
+                    var results = new List<ManagementBaseObject>();
+                    foreach (var managementBaseObject in searcher.Get())
+                    {
+                        results.Add(managementBaseObject);
+                    }
+
+                    if (results.Count != 1)
+                    {
+                        throw new DriveNotFoundException(opts.DriveName);
+                    }
+
+                    volumeInfo = new Win32Volume(results[0]);
+                }
+
+                var enoughSpace = EnoughRemaining(opts, volumeInfo);
+                ConsoleReporter.PrintRemainingSpace(opts, volumeInfo, enoughSpace);
+                NunitReporter.PrintRemainingSpace(opts, volumeInfo, enoughSpace);
+                if (!enoughSpace)
+                {
+                    Environment.Exit(1);
+                }
             }
             catch (Exception ex)
             {
-                throw new ConnectionError(ex);
-            }
-
-            var query = new ObjectQuery($"SELECT * from Win32_Volume WHERE DriveLetter = '{opts.DriveName}:'");
-            Win32Volume volumeInfo;
-            using (var searcher = new ManagementObjectSearcher(scope, query))
-            {
-                var results = new List<ManagementBaseObject>();
-                foreach (var managementBaseObject in searcher.Get())
-                {
-                    results.Add(managementBaseObject);
-                }
-
-                if (results.Count != 1)
-                {
-                    throw new DriveNotFoundException(opts.DriveName);
-                }
-                volumeInfo = new Win32Volume(results[0]);                
-            }
-            var enoughSpace = EnoughRemaining(opts, volumeInfo);
-            ConsoleReporter.PrintRemainingSpace(opts, volumeInfo, enoughSpace);
-            if (!enoughSpace)
-            {
-                Environment.Exit(1);
+                ConsoleReporter.PrintStackTrace(opts, ex);
+                NunitReporter.PrintStackTrace(opts, ex);
             }
         }
 
