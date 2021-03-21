@@ -18,7 +18,7 @@ namespace SpaceChecker.Net.Test
             
             Assert.Throws<ConnectionError>(() =>
             {
-                Runner.RunOptions(opt);
+                Runner.RunOptionsUnsafe(opt);
             });
         }
         
@@ -35,7 +35,7 @@ namespace SpaceChecker.Net.Test
             
             Assert.Throws<DriveNotFoundException>(() =>
             {
-                Runner.RunOptions(opt);
+                Runner.RunOptionsUnsafe(opt);
             });
         }
 
