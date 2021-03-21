@@ -18,7 +18,7 @@ namespace ScapeChecker.Net
             stringBuilder.AppendLine("Wanted space    : " + asBytes.ToPrettySize());
             return stringBuilder.ToString();
         }
-        
+
         public static void PrintRemainingSpace(Options opts, Win32Volume volume, bool enoughSpace)
         {
             var stringBuilder = new StringBuilder();
@@ -71,7 +71,13 @@ namespace ScapeChecker.Net
             {
                 return;
             }
-            
+
+            var parentFolder = Directory.GetParent(opts.NUnitOuputFile).ToString();
+            if (!Directory.Exists(parentFolder))
+            {
+                Directory.CreateDirectory(parentFolder);
+            }
+
             var xmlnsEmpty = new XmlSerializerNamespaces();
             xmlnsEmpty.Add("", "");
             var x = new XmlSerializer(typeof(TestSuite));
