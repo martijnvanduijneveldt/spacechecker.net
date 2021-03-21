@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScapeChecker.Net", "ScapeChecker.Net\ScapeChecker.Net.csproj", "{9A4713D1-7814-46E9-8161-FBDE19F17809}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceChecker.Net", "SpaceChecker.Net\SpaceChecker.Net.csproj", "{9A4713D1-7814-46E9-8161-FBDE19F17809}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceChecker.Net.Test", "SpaceChecker.Net.Test\SpaceChecker.Net.Test.csproj", "{718978FF-4DDD-4F70-A0CE-4FFAC7BCD3C8}"
 EndProject

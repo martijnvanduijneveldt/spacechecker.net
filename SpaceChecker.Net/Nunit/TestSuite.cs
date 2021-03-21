@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Xml.Serialization;
 
-namespace ScapeChecker.Net.Models
+namespace SpaceChecker.Net.Models
 {
     [XmlRoot("testsuite")]
     public class TestSuite

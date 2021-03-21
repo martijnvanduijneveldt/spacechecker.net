@@ -1,8 +1,8 @@
 using System;
 using System.IO;
 using NUnit.Framework;
-using ScapeChecker.Net;
-using ScapeChecker.Net.Models;
+using SpaceChecker.Net;
+using SpaceChecker.Net.Models;
 
 namespace SpaceChecker.Net.Test
 {

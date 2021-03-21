@@ -1,6 +1,6 @@
 using CommandLine;
 
-namespace ScapeChecker.Net.Models
+namespace SpaceChecker.Net.Models
 {
     public class Options
     {

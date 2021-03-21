@@ -1,7 +1,7 @@
 using System;
 using System.Management;
 
-namespace ScapeChecker.Net
+namespace SpaceChecker.Net
 {
     public class Win32Volume
     {

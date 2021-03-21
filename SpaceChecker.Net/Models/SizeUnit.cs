@@ -1,6 +1,6 @@
 using System;
 
-namespace ScapeChecker.Net.Models
+namespace SpaceChecker.Net.Models
 {
     public enum SizeUnit
     {

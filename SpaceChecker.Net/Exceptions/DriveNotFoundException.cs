@@ -1,6 +1,6 @@
 using System;
 
-namespace ScapeChecker.Net.Exceptions
+namespace SpaceChecker.Net.Exceptions
 {
     public class DriveNotFoundException : Exception
     {

@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Text;
 using System.Xml.Serialization;
-using ScapeChecker.Net.Models;
+using SpaceChecker.Net.Models;
 
-namespace ScapeChecker.Net
+namespace SpaceChecker.Net
 {
     public class NunitReporter
     {

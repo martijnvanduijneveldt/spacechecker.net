@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Management;
 using CommandLine;
-using ScapeChecker.Net.Exceptions;
-using ScapeChecker.Net.Models;
+using SpaceChecker.Net.Exceptions;
+using SpaceChecker.Net.Models;
 
-namespace ScapeChecker.Net
+namespace SpaceChecker.Net
 {
     public class Runner
     {

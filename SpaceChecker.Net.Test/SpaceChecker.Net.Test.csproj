@@ -13,7 +13,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ScapeChecker.Net\ScapeChecker.Net.csproj" />
+      <ProjectReference Include="..\SpaceChecker.Net\SpaceChecker.Net.csproj" />
     </ItemGroup>
 
 </Project>

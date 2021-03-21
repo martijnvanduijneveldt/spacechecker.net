@@ -1,7 +1,7 @@
 using System;
-using ScapeChecker.Net.Models;
+using SpaceChecker.Net.Models;
 
-namespace ScapeChecker.Net
+namespace SpaceChecker.Net
 {
     public static class ConsoleReporter
     {

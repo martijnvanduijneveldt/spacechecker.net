@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using ScapeChecker.Net;
-using ScapeChecker.Net.Exceptions;
-using ScapeChecker.Net.Models;
+using SpaceChecker.Net;
+using SpaceChecker.Net.Exceptions;
+using SpaceChecker.Net.Models;
 
 namespace SpaceChecker.Net.Test
 {

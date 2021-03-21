@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Management;
 using CommandLine;
-using ScapeChecker.Net.Models;
+using SpaceChecker.Net.Models;
 
-namespace ScapeChecker.Net
+namespace SpaceChecker.Net
 {
     internal class Program
     {
